@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="txtPass" destination="R2h-M3-Rgy" id="B25-4v-eSz"/>
+                <outlet property="txtUser" destination="1dc-Jv-Lks" id="n8E-QU-Cz0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introduzca la información requerida:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUG-oT-Ruq">
+                    <rect key="frame" x="8" y="136" width="584" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="T2S-jm-LrI"/>
+                        <constraint firstAttribute="width" constant="584" id="XHA-cM-EBd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1dc-Jv-Lks">
+                    <rect key="frame" x="8" y="200" width="584" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="584" id="74Y-j9-uhi"/>
+                        <constraint firstAttribute="height" constant="30" id="Y9l-8m-CKG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-M3-Rgy">
+                    <rect key="frame" x="8" y="238" width="584" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5tV-vo-u4J"/>
+                        <constraint firstAttribute="width" constant="584" id="gHN-Yg-3ox"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-qe-JDA">
+                    <rect key="frame" x="8" y="293" width="584" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hKm-xZ-oGS"/>
+                        <constraint firstAttribute="width" constant="584" id="ysA-Hl-wPc"/>
+                    </constraints>
+                    <state key="normal" title="Entrar">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doLogin:" destination="-1" eventType="touchUpInside" id="V6m-v8-Xtx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VmN-qe-JDA" secondAttribute="trailing" constant="8" id="0i2-gd-HL2"/>
+                <constraint firstItem="YUG-oT-Ruq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="88V-Gn-Bzy"/>
+                <constraint firstItem="1dc-Jv-Lks" firstAttribute="top" secondItem="YUG-oT-Ruq" secondAttribute="bottom" constant="43" id="ELc-yv-OOi"/>
+                <constraint firstAttribute="trailing" secondItem="YUG-oT-Ruq" secondAttribute="trailing" constant="8" id="KKz-3Y-T2u"/>
+                <constraint firstItem="VmN-qe-JDA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Khz-2X-kBY"/>
+                <constraint firstAttribute="trailing" secondItem="1dc-Jv-Lks" secondAttribute="trailing" constant="8" id="LCm-9W-Byh"/>
+                <constraint firstItem="R2h-M3-Rgy" firstAttribute="top" secondItem="1dc-Jv-Lks" secondAttribute="bottom" constant="8" id="LZg-WH-BFP"/>
+                <constraint firstAttribute="trailing" secondItem="R2h-M3-Rgy" secondAttribute="trailing" constant="8" id="OlV-qp-dLY"/>
+                <constraint firstAttribute="bottom" secondItem="VmN-qe-JDA" secondAttribute="bottom" constant="277" id="gop-nL-dzw"/>
+                <constraint firstItem="R2h-M3-Rgy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="jYS-v5-caC"/>
+                <constraint firstItem="VmN-qe-JDA" firstAttribute="top" secondItem="R2h-M3-Rgy" secondAttribute="bottom" constant="25" id="p3W-c3-q1d"/>
+                <constraint firstItem="1dc-Jv-Lks" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="tbe-Dr-bCP"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

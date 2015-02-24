@@ -17,7 +17,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.mainViewController = [[MainViewController alloc] init];
+    self.loginViewController = [[LoginViewController alloc] init];
+    //self.navigationController = [[UINavigationController alloc] initWithRootViewController:(isUserLogged)?self.mainViewController:self.loginViewController];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
+    [self.window setRootViewController:self.navigationController];
+    [self.window makeKeyAndVisible];
+    // add Notification to change window when login success.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogin:) name:@"userDidLogin" object:nil];
     return YES;
+}
+
+-(void)userDidLogin:(NSNotification*)notification
+{
+    NSLog(@"User did Login, change View...");
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"userDidLogin" object:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    [self.window setRootViewController:self.navigationController];
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

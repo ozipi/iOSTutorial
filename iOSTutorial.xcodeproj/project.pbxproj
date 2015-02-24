@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		C8A320BE1A9D134F0094E4EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320BD1A9D134F0094E4EF /* main.m */; };
 		C8A320C11A9D134F0094E4EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320C01A9D134F0094E4EF /* AppDelegate.m */; };
-		C8A320C41A9D134F0094E4EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320C31A9D134F0094E4EF /* ViewController.m */; };
-		C8A320C71A9D134F0094E4EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A320C51A9D134F0094E4EF /* Main.storyboard */; };
 		C8A320C91A9D134F0094E4EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A320C81A9D134F0094E4EF /* Images.xcassets */; };
 		C8A320CC1A9D134F0094E4EF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A320CA1A9D134F0094E4EF /* LaunchScreen.xib */; };
 		C8A320D81A9D134F0094E4EF /* iOSTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320D71A9D134F0094E4EF /* iOSTutorialTests.m */; };
+		C8A320E41A9D14260094E4EF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320E21A9D14260094E4EF /* MainViewController.m */; };
+		C8A320E51A9D14260094E4EF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A320E31A9D14260094E4EF /* MainViewController.xib */; };
+		C8A320EA1A9D14540094E4EF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320E81A9D14540094E4EF /* LoginViewController.m */; };
+		C8A320EB1A9D14540094E4EF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A320E91A9D14540094E4EF /* LoginViewController.xib */; };
+		C8A320EF1A9D2EEE0094E4EF /* RESTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A320EE1A9D2EEE0094E4EF /* RESTManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,19 @@
 		C8A320BD1A9D134F0094E4EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8A320BF1A9D134F0094E4EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8A320C01A9D134F0094E4EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C8A320C21A9D134F0094E4EF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C8A320C31A9D134F0094E4EF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C8A320C61A9D134F0094E4EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8A320C81A9D134F0094E4EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8A320CB1A9D134F0094E4EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C8A320D11A9D134F0094E4EF /* iOSTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A320D61A9D134F0094E4EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A320D71A9D134F0094E4EF /* iOSTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTutorialTests.m; sourceTree = "<group>"; };
+		C8A320E11A9D14260094E4EF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C8A320E21A9D14260094E4EF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C8A320E31A9D14260094E4EF /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		C8A320E71A9D14540094E4EF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C8A320E81A9D14540094E4EF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C8A320E91A9D14540094E4EF /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C8A320ED1A9D2EEE0094E4EF /* RESTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTManager.h; sourceTree = "<group>"; };
+		C8A320EE1A9D2EEE0094E4EF /* RESTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +89,13 @@
 		C8A320BA1A9D134E0094E4EF /* iOSTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				C8A320EC1A9D2ED40094E4EF /* Managers */,
 				C8A320BF1A9D134F0094E4EF /* AppDelegate.h */,
 				C8A320C01A9D134F0094E4EF /* AppDelegate.m */,
-				C8A320C21A9D134F0094E4EF /* ViewController.h */,
-				C8A320C31A9D134F0094E4EF /* ViewController.m */,
-				C8A320C51A9D134F0094E4EF /* Main.storyboard */,
 				C8A320C81A9D134F0094E4EF /* Images.xcassets */,
 				C8A320CA1A9D134F0094E4EF /* LaunchScreen.xib */,
 				C8A320BB1A9D134E0094E4EF /* Supporting Files */,
+				C8A320E61A9D143C0094E4EF /* ViewControllers */,
 			);
 			path = iOSTutorial;
 			sourceTree = "<group>";
@@ -117,6 +124,28 @@
 				C8A320D61A9D134F0094E4EF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C8A320E61A9D143C0094E4EF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C8A320E11A9D14260094E4EF /* MainViewController.h */,
+				C8A320E21A9D14260094E4EF /* MainViewController.m */,
+				C8A320E31A9D14260094E4EF /* MainViewController.xib */,
+				C8A320E71A9D14540094E4EF /* LoginViewController.h */,
+				C8A320E81A9D14540094E4EF /* LoginViewController.m */,
+				C8A320E91A9D14540094E4EF /* LoginViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C8A320EC1A9D2ED40094E4EF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C8A320ED1A9D2EEE0094E4EF /* RESTManager.h */,
+				C8A320EE1A9D2EEE0094E4EF /* RESTManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +228,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A320C71A9D134F0094E4EF /* Main.storyboard in Resources */,
+				C8A320EB1A9D14540094E4EF /* LoginViewController.xib in Resources */,
 				C8A320CC1A9D134F0094E4EF /* LaunchScreen.xib in Resources */,
+				C8A320E51A9D14260094E4EF /* MainViewController.xib in Resources */,
 				C8A320C91A9D134F0094E4EF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8A320C41A9D134F0094E4EF /* ViewController.m in Sources */,
+				C8A320EA1A9D14540094E4EF /* LoginViewController.m in Sources */,
 				C8A320C11A9D134F0094E4EF /* AppDelegate.m in Sources */,
+				C8A320EF1A9D2EEE0094E4EF /* RESTManager.m in Sources */,
+				C8A320E41A9D14260094E4EF /* MainViewController.m in Sources */,
 				C8A320BE1A9D134F0094E4EF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +276,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C8A320C51A9D134F0094E4EF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8A320C61A9D134F0094E4EF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C8A320CA1A9D134F0094E4EF /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
