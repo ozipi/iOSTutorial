@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RESTManager.h"
 
-@interface MainViewController : UIViewController
-
+@interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong, atomic) IBOutlet UITableView * tblProducts;
+@property (strong, atomic) NSMutableArray * arrProducts;
 @end
+

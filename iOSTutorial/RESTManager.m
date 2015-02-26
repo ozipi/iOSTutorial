@@ -46,6 +46,9 @@
         [request setValue:[NSString stringWithFormat:@"%ld", (unsigned long)[jsonData length]] forHTTPHeaderField:@"Content-Length"];
         [request setHTTPBody:jsonData];
     }
+    
+    NSLog(@"eeee: %@", request);
+    
     [request setHTTPMethod:method];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

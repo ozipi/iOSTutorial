@@ -16,12 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * dictUser = [defaults objectForKey:@"userInfo"];
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.mainViewController = [[MainViewController alloc] init];
     self.loginViewController = [[LoginViewController alloc] init];
-    //self.navigationController = [[UINavigationController alloc] initWithRootViewController:(isUserLogged)?self.mainViewController:self.loginViewController];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:([[dictUser objectForKey:@"isUserLogged"] boolValue])?self.mainViewController:self.loginViewController];
+    //self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
     [self.window setRootViewController:self.navigationController];
     [self.window makeKeyAndVisible];
     // add Notification to change window when login success.
