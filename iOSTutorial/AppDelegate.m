@@ -18,6 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * dictUser = [defaults objectForKey:@"userInfo"];
+    NSLog([dictUser objectForKey:@"access_token"]);
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.mainViewController = [[MainViewController alloc] init];

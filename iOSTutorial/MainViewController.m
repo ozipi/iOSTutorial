@@ -15,11 +15,17 @@
 @implementation MainViewController
 @synthesize tblProducts;
 @synthesize arrProducts;
+@synthesize token;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setTitle:@"Catalogo..."];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary * dictUser = [defaults objectForKey:@"userInfo"];
+    token = [dictUser objectForKey:@"access_token"];
+    
     [tblProducts setDelegate:self];
     [tblProducts setDataSource:self];
     [self doCallProductsService];
@@ -28,7 +34,8 @@
 -(void)doCallProductsService
 {
     arrProducts = [[NSMutableArray alloc] init];
-    [RESTManager sendData:nil toService:@"products" withMethod:@"GET" isTesting:NO withAccessToken:nil toCallBack:^(id result){
+    [RESTManager sendData:nil toService:@"products" withMethod:@"GET" isTesting:NO withAccessToken:token toCallBack:^(id result){
+        NSLog(@"rechult %@", result);
         arrProducts = result;
         [tblProducts reloadData];
     }];
@@ -46,8 +53,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //return [arrProducts count];
-    return 10;
+    return [arrProducts count];
+    //return 10;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,10 +66,11 @@
     }
     NSMutableDictionary * dictProduct = [arrProducts objectAtIndex:indexPath.row];
     [[cell textLabel] setTextColor:[UIColor colorWithRed:95.0f/255.0 green:95.0f/255.0 blue:95.0f/255 alpha:1.0f]];
-    cell.textLabel.text = @"Producto...";
+    //cell.textLabel.text = @"Producto...";
+    cell.textLabel.text = [dictProduct objectForKey:@"description"];
     [cell setAccessoryType:UITableViewCellAccessoryNone];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
+
     return cell;
 }
 

@@ -8,7 +8,7 @@
 
 #import "RESTManager.h"
 
-#define TESTING_URL @"" //todo: define
+#define TESTING_URL @"http://jemiza.herokuapp.com/admin/"
 #define SERVER_URL @"http://jemiza.herokuapp.com/admin/"
 
 @implementation RESTManager
