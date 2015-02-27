@@ -16,11 +16,15 @@
 @synthesize tblProducts;
 @synthesize arrProducts;
 @synthesize token;
+@synthesize progressHud;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setTitle:@"Catalogo..."];
+    
+    progressHud = [JGProgressHUD progressHUDWithStyle:(JGProgressHUDStyleExtraLight)];
+    [[progressHud textLabel] setText:@"Loading service"];
     
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary * dictUser = [defaults objectForKey:@"userInfo"];
@@ -34,10 +38,12 @@
 -(void)doCallProductsService
 {
     arrProducts = [[NSMutableArray alloc] init];
+    [progressHud showInView:[self view] animated:YES];
     [RESTManager sendData:nil toService:@"products" withMethod:@"GET" isTesting:NO withAccessToken:token toCallBack:^(id result){
         NSLog(@"rechult %@", result);
         arrProducts = result;
         [tblProducts reloadData];
+        [progressHud dismissAnimated:YES];
     }];
 }
 
