@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "RESTManager.h"
 #import <JGProgressHUD.h>
+#import "ProductDetailViewController.h"
 
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, atomic) IBOutlet UITableView * tblProducts;
 @property (strong, atomic) NSMutableArray * arrProducts;
 @property (strong, atomic) NSString * token;
 @property (nonatomic, strong) JGProgressHUD * progressHud;
+@property (nonatomic, strong) ProductDetailViewController * productDetailViewController;
 @end
 

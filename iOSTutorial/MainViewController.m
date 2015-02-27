@@ -17,6 +17,7 @@
 @synthesize arrProducts;
 @synthesize token;
 @synthesize progressHud;
+@synthesize productDetailViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,6 +79,15 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSMutableDictionary * dictProduct = [arrProducts objectAtIndex:indexPath.row];
+    
+    productDetailViewController = [[ProductDetailViewController alloc] init];
+    productDetailViewController.dictProduct = dictProduct;
+    [self.navigationController pushViewController:productDetailViewController animated:YES];
 }
 
 /*

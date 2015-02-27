@@ -22,6 +22,8 @@
     lblProductName.text = [dictProduct objectForKey:@"description"];
     txtProductDescription.text = [dictProduct objectForKey:@"description_sub_family"];
     lblCategory.text = [dictProduct objectForKey:@"description_category"];
+    
+    NSLog(@"qqq %@", dictProduct);
 }
 
 - (void)didReceiveMemoryWarning {
