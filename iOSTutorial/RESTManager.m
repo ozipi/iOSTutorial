@@ -10,6 +10,7 @@
 
 #define TESTING_URL @"http://jemiza.herokuapp.com/admin/"
 #define SERVER_URL @"http://jemiza.herokuapp.com/admin/"
+#define CATALOG_URL @"http://aroma-bakery-cafe.herokuapp.com/admin/foods.json"
 
 @implementation RESTManager
 
@@ -70,4 +71,63 @@
         }
     }];
 }
+
++(void)getProducts:(NSString*) products toCallBack:(void (^)(id))callback
+{
+    NSLog(@"getProducts %@", CATALOG_URL);
+    NSURL *url = [NSURL URLWithString:CATALOG_URL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"json" forHTTPHeaderField:@"Data-Type"];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if(httpResponse.statusCode == 204)
+        {
+            callback(@{@"success": @YES});
+        }
+        else if(!error && response != nil)
+        {
+            NSDictionary *responseJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"E_E %@", responseJson);
+            callback(responseJson);
+        }
+        else
+        {
+            callback(nil);
+        }
+    }];
+}
+
+//+(void)getProductsRefactored:(NSString*) products toCallBack:(void (^)(id))callback
+//{
+//    [self getUrlCall:products toCallBack:callback withUrl:CATALOG_URL];
+//}
+//
+//+(void)getUrlCall:(NSString*) products toCallBack:(void (^)(id))callback withUrl:callUrl
+//{
+//    NSURL *url = [NSURL URLWithString:callUrl];
+//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+//    [request setHTTPMethod:@"GET"];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [request setValue:@"json" forHTTPHeaderField:@"Data-Type"];
+//    
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+//        if(httpResponse.statusCode == 204){
+//            callback(@{@"sucess": @YES});
+//        }
+//        else if(!error && response != nil)
+//        {
+//            NSDictionary *responseJSon = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+//            callback(responseJSon);
+//        }
+//        else
+//        {
+//            callback(nil);
+//        }
+//    }];
+//}
 @end

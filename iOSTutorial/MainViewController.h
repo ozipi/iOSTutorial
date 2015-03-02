@@ -10,12 +10,17 @@
 #import "RESTManager.h"
 #import <JGProgressHUD.h>
 #import "ProductDetailViewController.h"
+#import "ImageCatalogViewController.h"
 
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (strong, atomic) IBOutlet UITableView * tblProducts;
-@property (strong, atomic) NSMutableArray * arrProducts;
-@property (strong, atomic) NSString * token;
+@property (strong, nonatomic) IBOutlet UITableView * tblProducts;
+//@property (strong, nonatomic) IBOutlet UIButton * btnCatalog;
+@property (strong, nonatomic) NSMutableArray * arrProducts;
+@property (strong, nonatomic) NSString * token;
 @property (nonatomic, strong) JGProgressHUD * progressHud;
 @property (nonatomic, strong) ProductDetailViewController * productDetailViewController;
+@property (nonatomic, strong) ImageCatalogViewController * imageCatalogViewController;
+
+-(IBAction)doShowImageCatalog:(id)sender;
 @end
 

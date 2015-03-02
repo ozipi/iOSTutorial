@@ -11,11 +11,15 @@
 
 #import "RESTManager.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITextFieldDelegate>
 // properties
 @property (nonatomic, strong) IBOutlet UITextField * txtUser;
 @property (nonatomic, strong) IBOutlet UITextField * txtPass;
+@property (nonatomic, strong) IBOutlet UIButton * btnLogin;
 @property (nonatomic, strong) JGProgressHUD * progressHud;
+@property (nonatomic, assign) BOOL isEmailValid;
+@property (nonatomic, assign) BOOL isUserValid;
 // actions
 -(IBAction)doLogin:(id)sender;
+-(IBAction)doValidateInputs:(id)sender;
 @end

@@ -10,4 +10,8 @@
 
 @interface RESTManager : NSObject
 +(void)sendData:(NSMutableDictionary *)data toService:(NSString *)service withMethod:(NSString *)method isTesting:(BOOL)testing withAccessToken:(NSString *)accessToken toCallBack:(void (^)(id))callback;
+
++(void)getProducts:(NSString*) products toCallBack:(void (^)(id))callback;
+//+(void)getProductsRefactored:(NSString*) products toCallBack:(void (^)(id))callback;
+//+(void)getUrlCall:(NSString*) products toCallBack:(void (^)(id))callback withUrl:callUrl;
 @end

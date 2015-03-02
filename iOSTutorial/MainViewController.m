@@ -18,6 +18,7 @@
 @synthesize token;
 @synthesize progressHud;
 @synthesize productDetailViewController;
+@synthesize imageCatalogViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -88,6 +89,13 @@
     productDetailViewController = [[ProductDetailViewController alloc] init];
     productDetailViewController.dictProduct = dictProduct;
     [self.navigationController pushViewController:productDetailViewController animated:YES];
+}
+
+-(void)doShowImageCatalog:(id)sender
+{
+    NSLog(@"nox");
+    imageCatalogViewController = [[ImageCatalogViewController alloc] init];
+    [self.navigationController pushViewController:imageCatalogViewController animated:YES];
 }
 
 /*

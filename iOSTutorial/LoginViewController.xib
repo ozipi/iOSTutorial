@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="btnLogin" destination="VmN-qe-JDA" id="W5D-xY-B9Z"/>
                 <outlet property="txtPass" destination="R2h-M3-Rgy" id="QLi-Am-pYW"/>
                 <outlet property="txtUser" destination="1dc-Jv-Lks" id="7xk-LM-jja"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -34,8 +35,11 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="doValidateInputs:" destination="-1" eventType="editingChanged" id="cXN-sd-Zst"/>
+                    </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-M3-Rgy">
+                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2h-M3-Rgy">
                     <rect key="frame" x="8" y="238" width="584" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="5tV-vo-u4J"/>
@@ -43,6 +47,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <action selector="doValidateInputs:" destination="-1" eventType="editingChanged" id="Fgx-6v-Cno"/>
+                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-qe-JDA">
                     <rect key="frame" x="8" y="293" width="584" height="30"/>
